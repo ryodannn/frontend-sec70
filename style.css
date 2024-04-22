@@ -1,0 +1,286 @@
+/* RESET */
+*{
+  
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+/* HEADER */
+header{
+    height: 100px;
+    background: grey;
+    padding: 0 50px;
+    color: azure;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    text-transform: uppercase;
+    color: #6cc091;
+    font-weight: 200;
+}
+.menu a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+
+.verMenu,
+.hideMenu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+
+}
+
+.verMenu{
+    order:1;
+}
+
+.menu a:hover,
+.verMenu:hover,
+.hideMenu{
+    color: #6cc091;
+}
+
+#check{
+    display: none;
+}
+
+/*BANNER*/
+#banner{
+    padding: 0 50px;
+    background-image: url(./imageBanner.png);
+    height: 45vh;
+    background-size: cover;
+    background-position: center;
+
+}
+
+#banner::before{
+    content: '';
+    background: rgba(77, 77, 92, 0.6);
+    position: absolute;
+    width: 100%;
+    height: 45vh;
+    left: 0;
+}
+
+.contenidoBanner{
+    position: relative;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.contenidoBanner h3{
+    font-size: 30px;
+    font-weight: 400;
+    padding: 10px 0px;
+}
+.contenidoBanner h3 span{
+    font-weight: 600;
+
+}
+
+.botonInicio{
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #6cc091;
+    padding: 20px 40px;
+    align-self: baseline;
+    transition: all 0.4s;
+}
+
+.botonInicio:hover{
+    background: #6cc09070;
+}
+
+#contacto{
+    background: #6cc091;
+    padding: 50px 0px;
+    color: #fff;
+}
+#contacto h4{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+#contacto form{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.datos-form{
+    display: flex;
+}
+.datos-form div{
+    padding: 10px;
+    flex: 1;
+}
+form label{
+    display: block;
+    margin-bottom: 10px;
+}
+form input,
+form textarea{
+    background: #6cc091;
+    border-radius: 10px;
+    border: 2px solid #8dcca9;
+    padding: 10px 5px;
+    outline: 0;
+    color: #fff;
+    width: 100%;
+}
+form input:focus,
+form textarea:focus{
+    border-color: #4bae77;
+    box-shadow: 0 0 0 1px #4bae77;
+}
+form input::placeholder,
+form textarea::placeholder{
+    color: #fff;
+}
+.mensaje{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.botonEnviarForm .boton-masInfo{
+    display: block;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    transition: 0.4s;
+}
+.botonEnviarForm .boton-masInfo:hover{
+    background: #4fa776ad;
+}
+
+/*RESPONSIVE*/
+@media(max-width: 768px){
+    .verMenu,
+    .hideMenu{
+        display: block;
+    }
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #4D4D5C;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0.8s;
+    }
+    .menu a{
+        display: block;
+        padding: 20px;
+
+    }
+    .hideMenu{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #check:checked ~ .menu{
+        right: 0;
+    }
+
+    #sobreNosotros{
+        flex-direction: column;
+    }
+
+    .iconosBanner{
+        flex-direction: column;
+    }
+    .iconosBanner div{
+        border: none;
+    }
+    .datos-form{
+        flex-direction: column;
+    }
+}
+
+#sobreNosotros{
+    padding: 50px 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#sobreNosotros img{
+    border-radius: 100%;
+}
+#sobreNosotros div{
+    padding: 30px 30px;
+}
+#sobreNosotros h4{
+    color: #4D4D5C;
+    font-size: 20px;
+    margin: 15px 0px;
+}
+
+#sobreNosotros div p{
+    color: #4D4D5C87;
+    font-size: 18px;
+}
+.boton-masInfo{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 30px;
+    border: 3px solid #6cc091;
+    border-radius: 30px;
+    margin-top: 15px;
+    transition: all 0.4s;
+}
+.boton-masInfo:hover{
+    background: #6cc091;
+    color: #fff;
+}
+
+#iconos{
+    padding: 0px 50px;
+    background: rgba(77, 77, 92, 0.6);
+}
+.iconosBanner{
+    padding: 50px 50px 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.iconosBanner div{
+    flex: 1;
+    margin: 20px 0px;
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+}
+#icono-xd{
+    border: none;
+}
+
+.iconosBanner div h6{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    margin: 10px 0px;
+}
+.iconosBanner p{
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 15px;
+}
+.botonIconos{
+    text-align: center;
+    padding-bottom: 50px;
+}
